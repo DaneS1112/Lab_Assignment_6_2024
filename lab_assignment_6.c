@@ -2,6 +2,20 @@
 
 int search(int numbers[], int low, int high, int value) 
 {
+	if(low == high){ 
+	return -1;
+	}
+	int mid=0;
+	mid = (low+high)/2;
+	if(numbers[mid]==value){
+		return mid;
+	}
+	if (numbers[mid]>value){
+		return search(numbers,low,mid,value);
+	}
+	if(numbers[mid]<value){
+		return search(numbers,mid + 1,high,value);
+	}
 	return -1;
 }
 
